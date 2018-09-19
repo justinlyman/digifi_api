@@ -28,19 +28,19 @@ Or install it yourself as:
 	development:
 	  digifi_api:
 	    client_id: 'yourclientidhere'
-	    client_public_key: 'yourclientappkeyhere'
+	    client_public_key: 'yourclientpublickeyhere'
 	    secret: 'yoursecrethere'
 	    base_uri: 'https://cloud.digifi.io/api/v2'
 	test:
 	  digifi_api:
 	    client_id: 'yourclientidhere'
-	    client_public_key: 'yourclientappkeyhere'
+	    client_public_key: 'yourclientpublickeyhere'
 	    secret: 'yoursecrethere'
 	    base_uri: 'https://cloud.digifi.io/api/v2'
 	production:
 	  digifi_api:
 	    client_id: 'yourclientidhere'
-	    client_public_key: 'yourclientappkeyhere'
+	    client_public_key: 'yourclientpublickeyhere'
 	    secret: 'yoursecrethere'
 	    base_uri: 'https://cloud.digifi.io/api/v2'
 	```
