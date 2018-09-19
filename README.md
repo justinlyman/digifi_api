@@ -28,19 +28,19 @@ Or install it yourself as:
 	development:
 	  digifi_api:
 	    client_id: 'yourclientidhere'
-	    client_app_key: 'yourclientappkeyhere'
+	    client_public_key: 'yourclientappkeyhere'
 	    secret: 'yoursecrethere'
 	    base_uri: 'https://cloud.digifi.io/api/v2'
 	test:
 	  digifi_api:
 	    client_id: 'yourclientidhere'
-	    client_app_key: 'yourclientappkeyhere'
+	    client_public_key: 'yourclientappkeyhere'
 	    secret: 'yoursecrethere'
 	    base_uri: 'https://cloud.digifi.io/api/v2'
 	production:
 	  digifi_api:
 	    client_id: 'yourclientidhere'
-	    client_app_key: 'yourclientappkeyhere'
+	    client_public_key: 'yourclientappkeyhere'
 	    secret: 'yoursecrethere'
 	    base_uri: 'https://cloud.digifi.io/api/v2'
 	```
@@ -52,7 +52,7 @@ Or install it yourself as:
 	```ruby
 	DigifiApi.configure do |config|
 	  config.client_id = Rails.application.secrets.digifi_api.client_id
-	  config.client_public_key = Rails.application.secrets.digifi_api.client_app_key
+	  config.client_public_key = Rails.application.secrets.digifi_api.client_public_key
 	  config.secret = Rails.application.secrets.digifi_api.secret
 	end
 	```
