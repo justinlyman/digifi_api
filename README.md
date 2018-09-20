@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Setup in Rails 5.2+ (Encrypted Credentials)
 
-1. Add configuration to config/credentials.yml.enc (change atom to yoour preferred text editor)
+1. Add configuration to config/credentials.yml.enc (change atom to your preferred text editor)
 	
 	```
 	EDITOR="atom --wait" rails credentials:edit
