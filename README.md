@@ -20,29 +20,20 @@ Or install it yourself as:
 
     $ gem install digifi_api
 
-## Setup in Rails
+## Setup in Rails 5.2+ (Encrypted Credentials)
 
-1. Add configuration for each environment in config/secrets.yml or whatever your strategy is for storing sensitive variables.
-
+1. Add configuration to config/credentials.yml.enc (change atom to yoour preferred text editor)
+	
+	```
+	EDITOR="atom --wait" rails credentials:edit
+	```
+	
 	```yaml
-	development:
-	  digifi_api:
-	    client_id: 'yourclientidhere'
-	    client_public_key: 'yourclientpublickeyhere'
-	    secret: 'yoursecrethere'
-	    base_uri: 'https://cloud.digifi.io/api/v2'
-	test:
-	  digifi_api:
-	    client_id: 'yourclientidhere'
-	    client_public_key: 'yourclientpublickeyhere'
-	    secret: 'yoursecrethere'
-	    base_uri: 'https://cloud.digifi.io/api/v2'
-	production:
-	  digifi_api:
-	    client_id: 'yourclientidhere'
-	    client_public_key: 'yourclientpublickeyhere'
-	    secret: 'yoursecrethere'
-	    base_uri: 'https://cloud.digifi.io/api/v2'
+	digifi_api:
+	  client_id: 'yourclientidhere'
+	  client_public_key: 'yourclientpublickeyhere'
+	  secret: 'yoursecrethere'
+	  base_uri: 'https://cloud.digifi.io/api/v2'
 	```
 
 2. Create an initializer: /config/initializers/digifi_api.rb
@@ -51,10 +42,10 @@ Or install it yourself as:
 
 	```ruby
 	DigifiApi.configure do |config|
-	  config.client_id = Rails.application.secrets.digifi_api.client_id
-	  config.client_public_key = Rails.application.secrets.digifi_api.client_public_key
-	  config.secret = Rails.application.secrets.digifi_api.secret
-	end
+  	  config.client_id = Rails.application.credentials.digifi_api[:client_id]
+  	  config.client_public_key = Rails.application.credentials.digifi_api[:client_public_key]
+  	  config.secret = Rails.application.credentials.digifi_api[:secret]
+    end
 	```
 
 ## Usage
