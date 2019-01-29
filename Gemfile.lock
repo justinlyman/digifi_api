@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    digifi_api (2.0.0)
+    digifi_api (2.0.1)
       json (~> 2.1.0)
       rest-client (~> 2.0.2)
 
@@ -60,7 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.16)
+  bundler (~> 2.0.1)
   digifi_api!
   pry (~> 0.11.3)
   rake (~> 10.0)
@@ -68,4 +68,4 @@ DEPENDENCIES
   webmock (~> 3.4.2)
 
 BUNDLED WITH
-   1.16.4
+   2.0.1
