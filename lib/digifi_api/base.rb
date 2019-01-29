@@ -5,7 +5,9 @@ module DigifiApi
   class Base
 
     def self.headers
-      {content_type: :json, accept: :json}
+      headers = {content_type: :json, accept: :json}
+      headers['x-access-token'] = DigifiApi.configuration.x_access_token unless DigifiApi.configuration.x_access_token.nil?
+      return headers
     end
 
     def self.payload(elements)
@@ -13,7 +15,6 @@ module DigifiApi
       body_hash['client_id'] = DigifiApi.configuration.client_id
       body_hash['client_public_key'] = DigifiApi.configuration.client_public_key
       body_hash['client_secret'] = DigifiApi.configuration.secret
-      body_hash['x-access-token'] = DigifiApi.configuration.x_access_token unless DigifiApi.configuration.x_access_token.nil?
       body_hash.merge!(elements)
     end
 
