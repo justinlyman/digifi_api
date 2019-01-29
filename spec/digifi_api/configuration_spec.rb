@@ -30,6 +30,12 @@ RSpec.describe DigifiApi::Configuration do
     end
   end
 
+  describe '.x_access_token' do
+    it 'returns the default value' do
+      expect(DigifiApi.configuration.x_access_token).to eq(DigifiApi::Configuration::DEFAULT_X_ACCESS_TOKEN)
+    end
+  end
+
   describe 'configured?' do
     it 'returns false if .client_id nil' do
       DigifiApi.configure do |config|
@@ -85,12 +91,14 @@ RSpec.describe DigifiApi::Configuration do
         config.client_public_key = 'testpubkey'
         config.secret = 'testsecret'
         config.base_uri = "https://test.com"
+        config.x_access_token = "test"
       end
       DigifiApi.configuration.reset
       expect(DigifiApi.configuration.client_id).to eq(DigifiApi::Configuration::DEFAULT_CLIENT_ID)
       expect(DigifiApi.configuration.client_public_key).to eq(DigifiApi::Configuration::DEFAULT_CLIENT_PUBLIC_KEY)
       expect(DigifiApi.configuration.secret).to eq(DigifiApi::Configuration::DEFAULT_SECRET)
       expect(DigifiApi.configuration.base_uri).to eq(DigifiApi::Configuration::DEFAULT_BASE_URI)
+      expect(DigifiApi.configuration.x_access_token).to eq(DigifiApi::Configuration::DEFAULT_X_ACCESS_TOKEN)
     end
   end
 
