@@ -25,28 +25,28 @@ module DigifiApi
       elements['variables'] = variables_hash
 
       # Optional Elements
-      if options['client_transaction_id']
-        elements['client_transaction_id'] = options['client_transaction_id']
+      if options[:client_transaction_id]
+        elements['client_transaction_id'] = options[:client_transaction_id]
       end
 
-      if options['return_input_variables']
-        if options['return_input_variables'] == true || options['return_input_variables'] == 'true'
+      if options[:return_input_variables]
+        if options[:return_input_variables] == true || options[:return_input_variables] == 'true'
           elements['return_input_variables'] = true
         end
       end
 
-      if options['return_processing_detail']
-        if options['return_processing_detail'] == true || options['return_processing_detail'] == 'true'
+      if options[:return_processing_detail]
+        if options[:return_processing_detail] == true || options[:return_processing_detail] == 'true'
           elements['return_processing_detail'] = true
         end
       end
 
-      if options['return_data_sources']
-        if options['return_data_sources'] == true || options['return_data_sources'] == 'true'
+      if options[:return_data_sources]
+        if options[:return_data_sources] == true || options[:return_data_sources] == 'true'
           elements['return_data_sources'] = true
         end
       end
-
+      
       response = self.post(@resource_uri, elements)
     end
 
