@@ -16,6 +16,7 @@ module DigifiApi
       body_hash['client_public_key'] = DigifiApi.configuration.client_public_key
       body_hash['client_secret'] = DigifiApi.configuration.secret
       body_hash.merge!(elements)
+      body_hash.to_json
     end
 
     def self.post(resource_uri, elements)
